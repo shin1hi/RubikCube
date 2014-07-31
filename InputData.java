@@ -137,8 +137,107 @@ public class InputData{
           for (int j= i+1; j<6 ;j++){
             if (j-i==3)continue; //裏の関係にある面の消去
             int ee = p(i)*p(j);
-            c[0][cc] = c[p(i)][cc]*c[j][cc];
-            if (arcp(c[p(i)][cc])
+            c[0][cc] = c[p(i)][cc]*c[p(j)][cc];
+            byte eo;
+            byte es;
+            //basho
+            if (i != 0 && j !=0) { //UP or DOWNの面を含まない
+              if (i%3 = 1) { //i = SIDE
+                //nakami
+                if (arcp(c[p(i)][cc]) != 0 && arcp(c[p(j)][cc]) !=0) { //UP or DOWNの面を含まない
+                  if (arcp(c[p(i)][cc])%3 == 1) { //i = SIDE
+                    eo=0;
+                    es=0;
+
+
+
+
+                  } else { //j = SIDE
+                    eo=1;
+                    es=0;
+
+
+
+                  }
+                } else { //UP or DOWN の面を含む
+                  if(arcp(c[p(i)][cc])%3==0){
+                    eo=1;
+                    es=1;
+
+                  }
+                  if(arcp(c[p(j)][cc])%3==0){
+                    eo=0;
+                    es=1;
+
+                  }
+
+
+                }
+              //basho
+            } else { //i = FRONT/BACK   //UP or DOWNの面を含まない
+                //nakami
+              if (arcp(c[p(i)][cc]) != 0 && arcp(c[p(j)][cc]) !=0) { //UP or DOWNの面を含まない
+                if (arcp(c[p(i)][cc])%3 == 1) { //i = SIDE
+                  eo=1;
+                  es=0;
+
+
+
+
+                } else { //j = SIDE
+                  eo=0;
+                  es=0;
+
+
+
+                }
+              } else { //UP or DOWN の面を含む
+                if(arcp(c[p(i)][cc])%3==0){
+                  eo=0;
+                  es=1;
+
+                }
+                if(arcp(c[p(j)][cc])%3==0){
+                  eo=1;
+                  es=1;
+
+                }
+
+
+              }
+            //basho
+            } else { //UP or DOWN の面を含む
+              //nakami
+              if (arcp(c[p(i)][cc]) != 0 && arcp(c[p(j)][cc]) !=0) { //UP or DOWNの面を含まない
+                if (arcp(c[p(i)][cc])%3 == 1) { //i = SIDE
+                  eo=0;
+                  es=0;
+
+
+
+
+                } else { //j = SIDE
+                  eo=1;
+                  es=0;
+
+
+
+                }
+              } else { //UP or DOWN の面を含む
+                if(arcp(c[p(i)][cc])%3==0){
+                  eo=1;
+                  es=1;
+
+                }
+                if(arcp(c[p(j)][cc])%3==0){
+                  eo=0;
+                  es=1;
+
+                }
+
+
+              }
+            }
           }
         }
 
@@ -152,7 +251,7 @@ public class InputData{
 
 
 
-    }catch (Exception e){ System.out.println("正しく入力してください");}
+    }catch (Exception e){ System.out.println("正しく入力してください"); }
     return c;
 
   }
