@@ -1,7 +1,5 @@
 import java.io.*;
 
-//UBUNTU has developped this.
-
 public class InputData{
   public static final char[] COLOR = {'青','橙','緑','白','赤','黄'};
   public static int[][] color;
@@ -108,8 +106,6 @@ public class InputData{
         c[p(i)][p(i)*p(i+5)]        = Color.p(color[i][8]);
 
         i++;
-
-        
 
 
 
